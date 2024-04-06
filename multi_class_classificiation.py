@@ -213,7 +213,7 @@ for j,(model,pair) in enumerate(zip(my_models,pairs)):
 pd.DataFrame(majority_vote_dict).head(10)
 #perform a majority vote, that is, select the class with the most predictions. We repeat the process for each sample.
 one_vs_one=np.array([np.bincount(sample.astype(int)).argmax() for sample  in majority_vote_array]) 
-print(one_vs_one)
+print("one_vs_one",one_vs_one)
 print("calculated accuracy score:",accuracy_score(y,one_vs_one))
 print("compared to sklearn:",accuracy_score(yhat,one_vs_one))
 
